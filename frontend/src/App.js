@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import Register from './components/Register';
@@ -7,8 +7,6 @@ import Login from './components/Login';
 import TaskList from './components/TaskList';
 import TaskDetails from './components/TaskDetails';
 import TaskForm from './components/TaskForm';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
