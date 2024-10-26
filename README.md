@@ -15,10 +15,7 @@ A full-stack task management application built with React for the frontend and N
 - [API Documentation](#api-documentation)
 - [Project Structure](#project-structure)
 
----
 
-## Demo
-To see a live demo, visit [http://localhost:3000](http://localhost:3000) after running the app locally.
 
 ---
 
@@ -46,24 +43,23 @@ To see a live demo, visit [http://localhost:3000](http://localhost:3000) after r
 ## Installation
 
 ### Clone the Repository
-```
-git clone https://github.com/yourusername/task-manager.git
+
+##  git clone https://github.com/yourusername/task-manager.git
 cd task-manager
 
 
 
-Backend Setup
+## Backend Setup
 Navigate to Backend Directory:
-
-
 
 cd backend
 Install Backend Dependencies:
 
-
+npm install express mysql2 cors jsonwebtoken bcrypt dotenv nodemon
 
 npm install
-Set up MySQL Database:
+
+## Set up MySQL Database:
 
 Open MySQL and run the following SQL command to create the database:
 sql
@@ -72,10 +68,7 @@ CREATE DATABASE taskdb;
 Run Database Migrations (if any):
 
 Run SQL scripts for setting up tables, if provided in a migrations.sql file.
-Environment Variables:
-
-Create a .env file in the backend root with the following variables:
-env
+## In dg,js
 
 PORT=5000
 DB_HOST=localhost
@@ -89,7 +82,7 @@ Start the Backend Server:
 
 npm start
 The server should now be running on http://localhost:5000.
-Frontend Setup
+## Frontend Setup
 Navigate to Frontend Directory:
 
 
@@ -97,12 +90,12 @@ Navigate to Frontend Directory:
 cd frontend
 Install Frontend Dependencies:
 
+npm install react react-dom react-router-dom axios bootstrap
 
 
 npm install
-Environment Variables:
 
-Create a Config.js file in src with the backend endpoint:
+## Create a Config.js file in src with the backend endpoint:
 javascript
 
 const config = {
@@ -118,11 +111,11 @@ The frontend should now be running on http://localhost:3000.
 
 
 
-Available Scripts
-Backend Scripts
+## Available Scripts
+## Backend Scripts
 npm start: Starts the server on http://localhost:5000.
 npm run dev: Starts the server with nodemon for development.
-Frontend Scripts
+## Frontend Scripts
 npm start: Starts the React app on http://localhost:3000.
 npm run build: Builds the React app for production to the build folder.
 
@@ -280,5 +273,4 @@ npm run build: Builds the React app for production to the build folder.
     ```
 ---
 
-Each endpoint requires the correct request format and headers. Ensure that the `Authorization` header contains a valid JWT token for authenticated routes. You can use a tool like **Postman** to test these endpoints by setting up the headers, method, and body accordingly.
 
