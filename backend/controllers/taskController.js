@@ -1,21 +1,23 @@
 const db = require('../config/db');
+
 exports.getTasks = (req, res) => {
   db.query('SELECT * FROM tasks WHERE user_id = ?', [req.userId], (err, results) => {
     if (err) return res.status(500).json({ error: 'Error fetching tasks' });
     res.json(results);
   });
 };
+
 exports.addTask = (req, res) => {
-    const task = { ...req.body, user_id: req.userId };
-    console.log("User ID:", req.userId); 
-    db.query('INSERT INTO tasks SET ?', task, (err) => {
-      if (err) {
-        console.error("Error inserting task:", err); 
-        return res.status(500).json({ error: 'Error adding task' });
-      }
-      res.json({ message: 'Task added' });
-    });
-  };
+  const task = { ...req.body, user_id: req.userId };
+  console.log("User ID:", req.userId);
+  db.query('INSERT INTO tasks SET ?', task, (err) => {
+    if (err) {
+      console.error("Error inserting task:", err);
+      return res.status(500).json({ error: 'Error adding task' });
+    }
+    res.json({ message: 'Task added' });
+  });
+};
 
 exports.getTask = (req, res) => {
   const taskId = req.params.id;

@@ -23,14 +23,14 @@ const TaskForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = id ? `${config.backendEndpoint}/tasks/${id}` : `${config.backendEndpoint}/task`;
+      const url = id ? `${config.backendEndpoint}/tasks/${id}` : `${config.backendEndpoint}/tasks`;
       const method = id ? 'put' : 'post';
       await axios[method](url, formData, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       navigate('/');
-    } catch {
-      setMessage('Error saving task');
+    } catch (error) {
+      setMessage(error.response?.data?.error || 'Error saving task');
     }
   };
 
@@ -52,7 +52,7 @@ const TaskForm = () => {
         className="form-control mb-2"
       />
       <button type="submit" className="btn btn-primary">{id ? 'Update' : 'Add'} Task</button>
-      {message && <p>{message}</p>}
+      {message && <p className="text-danger mt-3">{message}</p>}
     </form>
   );
 };
