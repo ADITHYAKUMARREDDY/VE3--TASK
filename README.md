@@ -5,7 +5,6 @@ A full-stack task management application built with React for the frontend and N
 ---
 
 ## Table of Contents
-- [Demo](#demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
@@ -67,15 +66,14 @@ sql
 CREATE DATABASE taskdb;
 Run Database Migrations (if any):
 
-Run SQL scripts for setting up tables, if provided in a migrations.sql file.
-## In dg,js
+Run SQL scripts for setting up tables, if provided in a database folder file.
+## In dg.js
 
 PORT=5000
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=yourpassword
 DB_NAME=taskdb
-JWT_SECRET=your_jwt_secret
 Start the Backend Server:
 
 
